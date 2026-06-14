@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milk Processing Center - Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+            <span class="brand-logo"><i class="fas fa-industry"></i></span>
+            Milk Processing Center
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav gap-1">
+                <li class="nav-item"><a class="nav-link active" href="index.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link" href="farmers.html"><i class="fas fa-users"></i> Farmers</a></li>
+                <li class="nav-item"><a class="nav-link" href="collections.html"><i class="fas fa-fill-drip"></i> Collections</a></li>
+                <li class="nav-item"><a class="nav-link" href="products.html"><i class="fas fa-box"></i> Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="orders.html"><i class="fas fa-shopping-cart"></i> Orders</a></li>
+                <li class="nav-item"><a class="nav-link" href="reports.html"><i class="fas fa-chart-bar"></i> Reports</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- ===== PAGE ===== -->
+<div class="page-wrapper">
+
+    <!-- Stat Cards -->
+    <div class="row g-4 mb-4">
+        <div class="col-xl-3 col-md-6">
+            <div class="card stat-card primary h-100">
+                <div class="card-body">
+                    <div class="stat-label">Active Farmers</div>
+                    <div class="stat-value" id="activeFarmers">—</div>
+                    <div class="stat-sub">Registered suppliers</div>
+                    <div class="stat-icon"><i class="fas fa-users"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+            <div class="card stat-card success h-100">
+                <div class="card-body">
+                    <div class="stat-label">Today's Collections</div>
+                    <div class="stat-value" id="todayCollections">—</div>
+                    <div class="stat-sub" id="todayQuantity">0 Liters</div>
+                    <div class="stat-icon"><i class="fas fa-fill-drip"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+            <div class="card stat-card warning h-100">
+                <div class="card-body">
+                    <div class="stat-label">Pending Orders</div>
+                    <div class="stat-value" id="pendingOrders">—</div>
+                    <div class="stat-sub">Awaiting processing</div>
+                    <div class="stat-icon"><i class="fas fa-shopping-cart"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+            <div class="card stat-card info h-100">
+                <div class="card-body">
+                    <div class="stat-label">Month Revenue</div>
+                    <div class="stat-value" id="monthRevenue">—</div>
+                    <div class="stat-sub">Confirmed + Delivered</div>
+                    <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tables Row -->
+    <div class="row g-4 mb-4">
+        <!-- Recent Collections -->
+        <div class="col-xl-6">
+            <div class="card table-card h-100">
+                <div class="card-header" style="background:linear-gradient(135deg,#1a5276,#2980b9);color:#fff;">
+                    <i class="fas fa-clock"></i> Recent Collections
+                </div>
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Farmer</th>
+                                    <th>Date</th>
+                                    <th>Qty (L)</th>
+                                    <th>Fat %</th>
+                                    <th>Grade</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recentCollectionsTable">
+                                <tr><td colspan="5" class="text-center py-4 text-muted">Loading...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Top Farmers -->
+        <div class="col-xl-6">
+            <div class="card table-card h-100">
+                <div class="card-header" style="background:linear-gradient(135deg,#148f77,#27ae60);color:#fff;">
+                    <i class="fas fa-trophy"></i> Top Farmers This Month
+                </div>
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Farmer</th>
+                                    <th>Days</th>
+                                    <th>Total (L)</th>
+                                    <th>Avg Fat %</th>
+                                </tr>
+                            </thead>
+                            <tbody id="topFarmersTable">
+                                <tr><td colspan="5" class="text-center py-4 text-muted">Loading...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Charts & Stock Row -->
+    <div class="row g-4">
+        <!-- Stock Alerts -->
+        <div class="col-xl-5">
+            <div class="card h-100">
+                <div class="card-header" style="background:linear-gradient(135deg,#922b21,#e74c3c);color:#fff;">
+                    <i class="fas fa-exclamation-triangle"></i> Stock Alerts
+                </div>
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Warehouse</th>
+                                    <th>Current</th>
+                                    <th>Reorder</th>
+                                </tr>
+                            </thead>
+                            <tbody id="stockAlertsTable">
+                                <tr><td colspan="4" class="text-center py-4 text-muted">Loading...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Collection Trend Chart -->
+        <div class="col-xl-7">
+            <div class="card h-100">
+                <div class="card-header" style="background:linear-gradient(135deg,#117a8b,#17a2b8);color:#fff;">
+                    <i class="fas fa-chart-area"></i> Collection Trend (6 Months)
+                </div>
+                <div class="card-body">
+                    <div style="position:relative;height:260px;">
+                        <canvas id="collectionTrendChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div><!-- /page-wrapper -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

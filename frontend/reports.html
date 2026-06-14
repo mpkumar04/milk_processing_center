@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milk Processing Center - Reports</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+            <span class="brand-logo"><i class="fas fa-industry"></i></span>
+            Milk Processing Center
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav gap-1">
+                <li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link" href="farmers.html"><i class="fas fa-users"></i> Farmers</a></li>
+                <li class="nav-item"><a class="nav-link" href="collections.html"><i class="fas fa-fill-drip"></i> Collections</a></li>
+                <li class="nav-item"><a class="nav-link" href="products.html"><i class="fas fa-box"></i> Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="orders.html"><i class="fas fa-shopping-cart"></i> Orders</a></li>
+                <li class="nav-item"><a class="nav-link active" href="reports.html"><i class="fas fa-chart-bar"></i> Reports</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="page-wrapper">
+    <div class="page-header">
+        <h1 class="page-title"><i class="fas fa-chart-bar"></i> Business Intelligence Reports</h1>
+    </div>
+
+    <!-- Filter Card -->
+    <div class="card report-filter-card mb-4">
+        <div class="card-header">
+            <i class="fas fa-filter"></i> Report Filters
+        </div>
+        <div class="card-body">
+            <div class="row g-3 align-items-end">
+                <div class="col-md-3">
+                    <label class="form-label">Report Type</label>
+                    <select class="form-select" id="reportType">
+                        <option value="farmer_performance">Farmer Performance</option>
+                        <option value="collection_summary">Collection Summary</option>
+                        <option value="product_sales">Product Sales</option>
+                        <option value="revenue_report">Revenue Report</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Start Date</label>
+                    <input type="date" class="form-control" id="startDate">
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">End Date</label>
+                    <input type="date" class="form-control" id="endDate">
+                </div>
+                <div class="col-md-3">
+                    <button class="btn btn-primary w-100" onclick="generateReport()">
+                        <i class="fas fa-play"></i> Generate Report
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Card -->
+    <div class="card report-result-card mb-4">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <span><i class="fas fa-table"></i> Report Results</span>
+            <button class="btn btn-light btn-sm" onclick="exportReport()">
+                <i class="fas fa-download"></i> Export CSV
+            </button>
+        </div>
+        <div class="card-body">
+            <div id="reportContent">
+                <div class="text-center py-5 text-muted">
+                    <i class="fas fa-chart-pie fa-3x mb-3 d-block" style="opacity:.3;"></i>
+                    Select filters above and click <strong>Generate Report</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Charts -->
+    <div class="row g-4">
+        <div class="col-xl-7">
+            <div class="card h-100">
+                <div class="card-header" style="background:linear-gradient(135deg,#117a8b,#17a2b8);color:#fff;">
+                    <i class="fas fa-chart-line"></i> Trend Analysis
+                </div>
+                <div class="card-body">
+                    <div style="position:relative;height:300px;">
+                        <canvas id="trendChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-5">
+            <div class="card h-100">
+                <div class="card-header" style="background:linear-gradient(135deg,#d68910,#f39c12);color:#fff;">
+                    <i class="fas fa-chart-pie"></i> Distribution Breakdown
+                </div>
+                <div class="card-body">
+                    <div style="position:relative;height:300px;">
+                        <canvas id="distributionChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+<script src="js/reports.js"></script>
+</body>
+</html>
