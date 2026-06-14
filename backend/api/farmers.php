@@ -1,6 +1,6 @@
 <?php
 /**
- * Highland Milk Industries - Farmers API
+ * Milk Processing Center - Farmers API
  * 
  * Handles farmer-related operations
  */

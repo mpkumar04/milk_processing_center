@@ -1,5 +1,5 @@
 /**
- * Highland Milk Industries - Farmers Management JavaScript
+ * Milk Processing Center - Farmers Management JavaScript
  */
 
 const API_BASE_URL = '../backend/api';

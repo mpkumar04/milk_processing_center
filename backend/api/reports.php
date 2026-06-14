@@ -1,6 +1,6 @@
 <?php
 /**
- * Highland Milk Industries - Reports API
+ * Milk Processing Center - Reports API
  */
 
 header("Access-Control-Allow-Origin: *");

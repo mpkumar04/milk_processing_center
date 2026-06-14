@@ -1,5 +1,5 @@
 -- =====================================================
--- Highland Milk Industries - Table Creation Script
+-- Milk Processing Center - Table Creation Script
 -- =====================================================
 
 USE highland_milk_db;

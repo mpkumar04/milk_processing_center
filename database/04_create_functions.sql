@@ -1,5 +1,5 @@
 -- =====================================================
--- Highland Milk Industries - User-Defined Functions
+-- Milk Processing Center - User-Defined Functions
 -- =====================================================
 
 USE highland_milk_db;

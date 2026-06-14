@@ -1,5 +1,5 @@
 -- =====================================================
--- Highland Milk Industries - Stored Procedures
+-- Milk Processing Center - Stored Procedures
 -- =====================================================
 
 USE highland_milk_db;

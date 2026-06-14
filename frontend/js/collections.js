@@ -1,5 +1,5 @@
 /**
- * Highland Milk Industries - Collections Management JavaScript
+ * Milk Processing Center - Collections Management JavaScript
  */
 
 const API_BASE_URL = '../backend/api';

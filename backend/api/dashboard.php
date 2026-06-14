@@ -1,6 +1,6 @@
 <?php
 /**
- * Highland Milk Industries - Dashboard API
+ * Milk Processing Center - Dashboard API
  * Business Intelligence Dashboard Data
  */
 

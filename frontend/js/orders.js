@@ -1,5 +1,5 @@
 /**
- * Highland Milk Industries - Orders Management JavaScript
+ * Milk Processing Center - Orders Management JavaScript
  */
 
 const API_BASE_URL = '../backend/api';

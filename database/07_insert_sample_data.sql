@@ -1,5 +1,5 @@
 -- =====================================================
--- Highland Milk Industries - Sample Data Insertion
+-- Milk Processing Center - Sample Data Insertion
 -- =====================================================
 
 USE highland_milk_db;
@@ -21,16 +21,16 @@ INSERT INTO DEPARTMENT (department_name, description) VALUES
 -- Insert Employee Data
 -- =====================================================
 INSERT INTO EMPLOYEE (nic_number, first_name, last_name, address, contact_number, email, department_id, designation, salary, date_of_joining, status) VALUES
-('197512345678', 'Nimal', 'Perera', '123 Galle Road, Colombo 03', '0771234567', 'nimal.perera@milco.lk', 1, 'Production Manager', 85000.00, '2015-03-15', 'Active'),
-('198234567890', 'Kamala', 'Silva', '45 Kandy Road, Peradeniya', '0772345678', 'kamala.silva@milco.lk', 2, 'QC Officer', 55000.00, '2018-07-01', 'Active'),
-('199045678901', 'Sunil', 'Fernando', '78 Main Street, Gampaha', '0773456789', 'sunil.fernando@milco.lk', 3, 'Sales Manager', 75000.00, '2016-01-10', 'Active'),
-('198556789012', 'Madhavi', 'Wickramasinghe', '23 Station Road, Kandy', '0774567890', 'madhavi.w@milco.lk', 4, 'Logistics Coordinator', 60000.00, '2017-05-20', 'Active'),
-('199267890123', 'Anil', 'Jayawardena', '56 Hospital Road, Negombo', '0775678901', 'anil.j@milco.lk', 5, 'Accountant', 65000.00, '2019-02-14', 'Active'),
-('198878901234', 'Dilini', 'Rajapakse', '89 Temple Road, Matara', '0776789012', 'dilini.r@milco.lk', 8, 'Collection Officer', 45000.00, '2020-06-01', 'Active'),
-('199189012345', 'Rohan', 'De Silva', '34 Beach Road, Galle', '0777890123', 'rohan.d@milco.lk', 4, 'Driver', 40000.00, '2020-09-15', 'Active'),
-('198990123456', 'Sanduni', 'Gunasekara', '67 Hill Street, Nuwara Eliya', '0778901234', 'sanduni.g@milco.lk', 8, 'Collection Officer', 45000.00, '2021-01-05', 'Active'),
-('199301234567', 'Kasun', 'Perera', '12 Lake Road, Kandy', '0779012345', 'kasun.p@milco.lk', 4, 'Driver', 40000.00, '2021-03-10', 'Active'),
-('198912345678', 'Priyanka', 'Fernando', '45 Colombo Road, Gampaha', '0770123456', 'priyanka.f@milco.lk', 3, 'Sales Officer', 50000.00, '2019-08-20', 'Active');
+('197512345678', 'Nimal', 'Perera', '123 Galle Road, Colombo 03', '0771234567', 'nimal.perera@mpc.lk', 1, 'Production Manager', 85000.00, '2015-03-15', 'Active'),
+('198234567890', 'Kamala', 'Silva', '45 Kandy Road, Peradeniya', '0772345678', 'kamala.silva@mpc.lk', 2, 'QC Officer', 55000.00, '2018-07-01', 'Active'),
+('199045678901', 'Sunil', 'Fernando', '78 Main Street, Gampaha', '0773456789', 'sunil.fernando@mpc.lk', 3, 'Sales Manager', 75000.00, '2016-01-10', 'Active'),
+('198556789012', 'Madhavi', 'Wickramasinghe', '23 Station Road, Kandy', '0774567890', 'madhavi.w@mpc.lk', 4, 'Logistics Coordinator', 60000.00, '2017-05-20', 'Active'),
+('199267890123', 'Anil', 'Jayawardena', '56 Hospital Road, Negombo', '0775678901', 'anil.j@mpc.lk', 5, 'Accountant', 65000.00, '2019-02-14', 'Active'),
+('198878901234', 'Dilini', 'Rajapakse', '89 Temple Road, Matara', '0776789012', 'dilini.r@mpc.lk', 8, 'Collection Officer', 45000.00, '2020-06-01', 'Active'),
+('199189012345', 'Rohan', 'De Silva', '34 Beach Road, Galle', '0777890123', 'rohan.d@mpc.lk', 4, 'Driver', 40000.00, '2020-09-15', 'Active'),
+('198990123456', 'Sanduni', 'Gunasekara', '67 Hill Street, Nuwara Eliya', '0778901234', 'sanduni.g@mpc.lk', 8, 'Collection Officer', 45000.00, '2021-01-05', 'Active'),
+('199301234567', 'Kasun', 'Perera', '12 Lake Road, Kandy', '0779012345', 'kasun.p@mpc.lk', 4, 'Driver', 40000.00, '2021-03-10', 'Active'),
+('198912345678', 'Priyanka', 'Fernando', '45 Colombo Road, Gampaha', '0770123456', 'priyanka.f@mpc.lk', 3, 'Sales Officer', 50000.00, '2019-08-20', 'Active');
 
 -- Update department heads
 UPDATE DEPARTMENT SET head_of_department = 1 WHERE department_name = 'Production';

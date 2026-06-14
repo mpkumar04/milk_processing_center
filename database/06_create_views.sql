@@ -1,5 +1,5 @@
 -- =====================================================
--- Highland Milk Industries - Views
+-- Milk Processing Center - Views
 -- Fixed for MariaDB / XAMPP
 -- =====================================================
 

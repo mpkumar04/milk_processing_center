@@ -1,5 +1,5 @@
 -- =====================================================
--- Highland Milk Industries - Additional Sample Data
+-- Milk Processing Center - Additional Sample Data
 -- Run this AFTER 07_insert_sample_data.sql
 -- Uses dynamic employee ID lookup to avoid FK errors
 -- =====================================================

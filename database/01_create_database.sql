@@ -1,5 +1,5 @@
 -- =====================================================
--- Highland Milk Industries Database Creation Script
+-- Milk Processing Center Database Creation Script
 -- Advanced Dairy Production and Distribution Management System
 -- =====================================================
 

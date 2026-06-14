@@ -1,4 +1,4 @@
-# 🐄 Pelwatte Milk Industries - Management System
+# 🐄 Milk Processing Center - Management System
 
 ![PHP](https://img.shields.io/badge/PHP-7.4+-blue)
 ![MySQL](https://img.shields.io/badge/MySQL-5.7+-orange)
@@ -60,9 +60,9 @@ A comprehensive web-based dairy farm management system designed to manage all as
 ## 📁 Project Structure
 
 ```
-highland_milk/
+milk_processing_center/
 ├── database/
-│   ├── highland_milk_backup.sql     # 🔄 Complete database backup
+│   ├── 08_additional_sample_data.sql     # 🔄 Complete database backup
 │   ├── 01_create_database.sql       # 🗄️ Database creation
 │   ├── 02_create_tables.sql         # 📋 Table definitions
 │   ├── 03_create_triggers.sql       # ⚡ Trigger implementations
@@ -118,7 +118,7 @@ git clone https://github.com/YOUR_USERNAME/highland-milk-industries.git
 cd highland-milk-industries
 
 # 2. Import complete database
-mysql -u root -p < database/highland_milk_backup.sql
+mysql -u root -p < database/08_additional_sample_data.sql
 
 # 3. Configure database connection
 # Edit backend/config/database.php with your credentials
@@ -128,7 +128,7 @@ mysql -u root -p < database/highland_milk_backup.sql
 # For Linux: Copy to /var/www/html/
 
 # 5. Open in browser
-http://localhost/highland_milk/frontend/index.html
+http://localhost/milk_processing_center/frontend/index.html
 ```
 
 ### Option 2: Step-by-Step Setup
@@ -142,32 +142,32 @@ http://localhost/highland_milk/frontend/index.html
 
 2. **Create tables:**
    ```bash
-   mysql -u root -p highland_milk_db < database/02_create_tables.sql
+   mysql -u root -p milk_processing_db < database/02_create_tables.sql
    ```
 
 3. **Create triggers:**
    ```bash
-   mysql -u root -p highland_milk_db < database/03_create_triggers.sql
+   mysql -u root -p milk_processing_db < database/03_create_triggers.sql
    ```
 
 4. **Create functions:**
    ```bash
-   mysql -u root -p highland_milk_db < database/04_create_functions.sql
+   mysql -u root -p milk_processing_db < database/04_create_functions.sql
    ```
 
 5. **Create stored procedures:**
    ```bash
-   mysql -u root -p highland_milk_db < database/05_create_procedures.sql
+   mysql -u root -p milk_processing_db < database/05_create_procedures.sql
    ```
 
 6. **Create views:**
    ```bash
-   mysql -u root -p highland_milk_db < database/06_create_views.sql
+   mysql -u root -p milk_processing_db < database/06_create_views.sql
    ```
 
 7. **Insert sample data:**
    ```bash
-   mysql -u root -p highland_milk_db < database/07_insert_sample_data.sql
+   mysql -u root -p milk_processing_db < database/07_insert_sample_data.sql
    ```
 
 ### Alternative: Execute all at once
@@ -181,7 +181,7 @@ cat database/*.sql | mysql -u root -p
    Edit `backend/config/database.php`:
    ```php
    define('DB_HOST', 'localhost');
-   define('DB_NAME', 'highland_milk_db');
+   define('DB_NAME', 'milk_processing_db');
    define('DB_USER', 'root');
    define('DB_PASS', 'your_password');
    ```
@@ -189,12 +189,12 @@ cat database/*.sql | mysql -u root -p
 2. **Copy files to web server:**
    ```bash
    # For XAMPP
-   cp -r backend /xampp/htdocs/highland_milk/
-   cp -r frontend /xampp/htdocs/highland_milk/
+   cp -r backend /xampp/htdocs/milk_processing_center/
+   cp -r frontend /xampp/htdocs/milk_processing_center/
    
    # For Linux/Apache
-   cp -r backend /var/www/html/highland_milk/
-   cp -r frontend /var/www/html/highland_milk/
+   cp -r backend /var/www/html/milk_processing_center/
+   cp -r frontend /var/www/html/milk_processing_center/
    ```
 
 ### Frontend Access
@@ -202,7 +202,7 @@ cat database/*.sql | mysql -u root -p
 1. Start your web server (Apache/Nginx)
 2. Open browser and navigate to:
    ```
-   http://localhost/highland_milk/frontend/index.html
+   http://localhost/milk_processing_center/frontend/index.html
    ```
 
 ## 📊 Database Schema
@@ -387,7 +387,7 @@ This project is developed for educational purposes as part of an Advanced Databa
 
 - **Student Name:** [Your Name]
 - **Registration No:** [Your Reg No]
-- **Organization:** Highland Milk Industries PLC
+- **Organization:** Milk Processing Center
 - **Academic Year:** 2025/2026
 
 ## 📞 Support
@@ -414,7 +414,7 @@ Complete project documentation including:
 - Test cases
 - BI features
 
-See: `Highland_Milk_ADBMS_Report.md`
+See: `Milk_Processing_Center_Report.md`
 
 ---
 

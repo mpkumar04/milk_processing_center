@@ -1,6 +1,6 @@
 <?php
 /**
- * Highland Milk Industries - Database Configuration
+ * Milk Processing Center - Database Configuration
  * 
  * Database connection settings for MySQL
  */

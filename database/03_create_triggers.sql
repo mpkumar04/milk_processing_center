@@ -1,5 +1,5 @@
 -- =====================================================
--- Highland Milk Industries - Triggers
+-- Milk Processing Center - Triggers
 -- =====================================================
 
 USE highland_milk_db;

@@ -1,6 +1,6 @@
 <?php
 /**
- * Highland Milk Industries - Milk Collections API
+ * Milk Processing Center - Milk Collections API
  * 
  * Handles milk collection operations
  */

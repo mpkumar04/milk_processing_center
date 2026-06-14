@@ -1,6 +1,6 @@
 <?php
 /**
- * Highland Milk Industries - Orders API
+ * Milk Processing Center - Orders API
  * 
  * Handles customer order operations
  */
