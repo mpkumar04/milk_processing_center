@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milk Processing Center - Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a2535 0%, #1a5276 60%, #148f77 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            padding: 1rem;
+        }
+
+        .login-wrapper {
+            width: 100%;
+            max-width: 420px;
+        }
+
+        /* Brand header above the card */
+        .brand-header {
+            text-align: center;
+            margin-bottom: 1.75rem;
+            color: #fff;
+        }
+
+        .brand-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(255,255,255,.15);
+            border-radius: 16px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: .75rem;
+            backdrop-filter: blur(6px);
+        }
+
+        .brand-header h1 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: .3px;
+        }
+
+        .brand-header p {
+            font-size: .85rem;
+            opacity: .75;
+            margin-top: .25rem;
+        }
+
+        /* Card */
+        .login-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,.3);
+            overflow: hidden;
+        }
+
+        .login-card-header {
+            background: linear-gradient(135deg, #1a5276, #148f77);
+            padding: 1.4rem 1.75rem;
+            color: #fff;
+        }
+
+        .login-card-header h5 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .login-card-header p {
+            font-size: .8rem;
+            opacity: .8;
+            margin: .25rem 0 0;
+        }
+
+        .login-card-body {
+            padding: 1.75rem;
+        }
+
+        /* Demo credentials box */
+        .demo-box {
+            background: #f0f7ff;
+            border: 1.5px solid #b8d4f0;
+            border-radius: 10px;
+            padding: .9rem 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .demo-box .demo-title {
+            font-size: .72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .8px;
+            color: #1a5276;
+            margin-bottom: .5rem;
+            display: flex;
+            align-items: center;
+            gap: .4rem;
+        }
+
+        .demo-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: .83rem;
+            color: #374151;
+            padding: .2rem 0;
+        }
+
+        .demo-row strong { color: #1a5276; }
+
+        .demo-row .copy-btn {
+            background: #1a5276;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: .18rem .55rem;
+            font-size: .72rem;
+            cursor: pointer;
+            transition: background .2s;
+        }
+
+        .demo-row .copy-btn:hover { background: #154360; }
+
+        /* Form */
+        .form-label {
+            font-size: .825rem;
+            font-weight: 600;
+            color: #4a5568;
+            margin-bottom: .4rem;
+        }
+
+        .input-group-text {
+            background: #f8fafc;
+            border-color: #d1dbe8;
+            color: #6c757d;
+        }
+
+        .form-control {
+            border-color: #d1dbe8;
+            font-size: .875rem;
+            padding: .55rem .85rem;
+            border-radius: 0 7px 7px 0 !important;
+        }
+
+        .form-control:focus {
+            border-color: #1a5276;
+            box-shadow: 0 0 0 3px rgba(26,82,118,.12);
+        }
+
+        .input-group .input-group-text {
+            border-radius: 7px 0 0 7px;
+        }
+
+        .btn-login {
+            background: linear-gradient(135deg, #1a5276, #148f77);
+            border: none;
+            color: #fff;
+            width: 100%;
+            padding: .7rem;
+            border-radius: 8px;
+            font-size: .925rem;
+            font-weight: 600;
+            letter-spacing: .3px;
+            transition: opacity .2s, transform .2s;
+            margin-top: .25rem;
+        }
+
+        .btn-login:hover {
+            opacity: .92;
+            transform: translateY(-1px);
+            color: #fff;
+        }
+
+        .btn-login:active { transform: translateY(0); }
+
+        /* Error alert */
+        .login-error {
+            display: none;
+            background: #f8d7da;
+            border: 1px solid #f5c2c7;
+            color: #842029;
+            border-radius: 8px;
+            padding: .65rem 1rem;
+            font-size: .85rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        .login-footer {
+            text-align: center;
+            margin-top: 1.25rem;
+            color: rgba(255,255,255,.6);
+            font-size: .78rem;
+        }
+
+        /* Spinner */
+        .spinner-sm {
+            width: 16px;
+            height: 16px;
+            border-width: 2px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-wrapper">
+
+    <!-- Brand -->
+    <div class="brand-header">
+        <div class="brand-icon"><i class="fas fa-industry"></i></div>
+        <h1>Milk Processing Center</h1>
+        <p>Management Information System</p>
+    </div>
+
+    <!-- Card -->
+    <div class="login-card">
+        <div class="login-card-header">
+            <h5><i class="fas fa-sign-in-alt me-2"></i>Sign In</h5>
+            <p>Enter your credentials to access the system</p>
+        </div>
+        <div class="login-card-body">
+
+            <!-- Demo credentials -->
+            <div class="demo-box">
+                <div class="demo-title"><i class="fas fa-info-circle"></i> Demo Credentials</div>
+                <div class="demo-row">
+                    <span>Username: <strong>admin</strong></span>
+                    <button class="copy-btn" onclick="fillCredentials()">Use</button>
+                </div>
+                <div class="demo-row">
+                    <span>Password: <strong>admin123</strong></span>
+                </div>
+            </div>
+
+            <!-- Error message -->
+            <div class="login-error" id="loginError">
+                <i class="fas fa-exclamation-circle me-1"></i>
+                <span id="loginErrorMsg">Invalid username or password.</span>
+            </div>
+
+            <!-- Login form -->
+            <form id="loginForm" novalidate>
+                <div class="mb-3">
+                    <label class="form-label">Username</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        <input type="text" class="form-control" id="username"
+                               placeholder="Enter username" autocomplete="username">
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label class="form-label">Password</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                        <input type="password" class="form-control" id="password"
+                               placeholder="Enter password" autocomplete="current-password">
+                        <button class="btn btn-outline-secondary" type="button" id="togglePassword"
+                                style="border-color:#d1dbe8;border-radius:0 7px 7px 0;">
+                            <i class="fas fa-eye" id="eyeIcon"></i>
+                        </button>
+                    </div>
+                </div>
+                <button type="submit" class="btn-login" id="loginBtn">
+                    <span id="loginBtnText"><i class="fas fa-sign-in-alt me-2"></i>Sign In</span>
+                    <span id="loginBtnSpinner" style="display:none;">
+                        <span class="spinner-border spinner-sm" role="status"></span> Signing in...
+                    </span>
+                </button>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="login-footer">
+        Milk Processing Center &copy; 2026
+    </div>
+
+</div>
+
+<script>
+    // Demo users
+    const USERS = [
+        { username: 'admin',   password: 'admin123',  role: 'Administrator' },
+        { username: 'manager', password: 'manager123', role: 'Manager' },
+        { username: 'staff',   password: 'staff123',  role: 'Staff' }
+    ];
+
+    // Fill demo credentials
+    function fillCredentials() {
+        document.getElementById('username').value = 'admin';
+        document.getElementById('password').value = 'admin123';
+        document.getElementById('loginError').style.display = 'none';
+    }
+
+    // Toggle password visibility
+    document.getElementById('togglePassword').addEventListener('click', function () {
+        const pwd = document.getElementById('password');
+        const icon = document.getElementById('eyeIcon');
+        if (pwd.type === 'password') {
+            pwd.type = 'text';
+            icon.className = 'fas fa-eye-slash';
+        } else {
+            pwd.type = 'password';
+            icon.className = 'fas fa-eye';
+        }
+    });
+
+    // Login form submit
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const username = document.getElementById('username').value.trim();
+        const password = document.getElementById('password').value;
+        const errorDiv = document.getElementById('loginError');
+        const errMsg   = document.getElementById('loginErrorMsg');
+
+        if (!username || !password) {
+            errMsg.textContent = 'Please enter both username and password.';
+            errorDiv.style.display = 'block';
+            return;
+        }
+
+        // Show spinner
+        document.getElementById('loginBtnText').style.display = 'none';
+        document.getElementById('loginBtnSpinner').style.display = 'inline';
+        errorDiv.style.display = 'none';
+
+        // Simulate short delay then check credentials
+        setTimeout(function () {
+            const user = USERS.find(u => u.username === username && u.password === password);
+
+            if (user) {
+                // Store session info
+                sessionStorage.setItem('mpc_logged_in', 'true');
+                sessionStorage.setItem('mpc_username', user.username);
+                sessionStorage.setItem('mpc_role', user.role);
+                // Redirect to dashboard
+                window.location.href = 'index.html';
+            } else {
+                document.getElementById('loginBtnText').style.display = 'inline';
+                document.getElementById('loginBtnSpinner').style.display = 'none';
+                errMsg.textContent = 'Invalid username or password.';
+                errorDiv.style.display = 'block';
+                document.getElementById('password').value = '';
+                document.getElementById('password').focus();
+            }
+        }, 600);
+    });
+
+    // If already logged in, skip login
+    if (sessionStorage.getItem('mpc_logged_in') === 'true') {
+        window.location.href = 'index.html';
+    }
+
+    // Allow Enter key on username field
+    document.getElementById('username').addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') document.getElementById('password').focus();
+    });
+</script>
+
+</body>
+</html>
